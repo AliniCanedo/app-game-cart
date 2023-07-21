@@ -10,6 +10,8 @@ import { Product } from 'src/app/shared/interfaces/product';
 export class GamesComponent {
 
   products: Product[] = [];
+
+  isMouseOver = false;
   
   constructor(private productsService: ProductsService) {  }
 
@@ -23,5 +25,5 @@ export class GamesComponent {
 
       }
     )
-  }
+  }  
 }
