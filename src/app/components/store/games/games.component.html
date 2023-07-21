@@ -1,9 +1,9 @@
 <div class="row mb-3">
-  <div class="col-8">
+  <div class="col-lg-8 col-6">
     <h2>Games</h2>
   </div>
 
-  <div class="col-4">
+  <div class="col-lg-4 col-6">
     <select class="form-select" aria-label="Default select example">
       <option selected>Open this select menu</option>
       <option value="1">One</option>
@@ -14,38 +14,17 @@
 </div>
 
 <div class="row">
-  <div class="col-4">
-    <div class="card" style="width: 18rem;">
-      <div class="card-body">
-        <h5 class="card-title">Card title</h5>
-        <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
-        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-        <a href="#" class="card-link">Card link</a>
-        <a href="#" class="card-link">Another link</a>
+  <div class="col-lg-4 mb-3" *ngFor="let product of products">
+    <div class="card">  
+      <div class="card-header">
+        <img src="../assets/{{product.image}}" class="card-img-top" alt="...">
+      </div>
+        
+      <div class="card-body text-center">
+        <p class="card-text mb-0">{{product.name}}</p>
+        <a href="#" class="card-link">{{product.price}}</a>
       </div>
     </div>
 
-  </div>
-  <div class="col-4">
-    <div class="card" style="width: 18rem;">
-      <div class="card-body">
-        <h5 class="card-title">Card title</h5>
-        <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
-        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-        <a href="#" class="card-link">Card link</a>
-        <a href="#" class="card-link">Another link</a>
-      </div>
-    </div>
-  </div>
-  <div class="col-4">
-    <div class="card" style="width: 18rem;">
-      <div class="card-body">
-        <h5 class="card-title">Card title</h5>
-        <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
-        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-        <a href="#" class="card-link">Card link</a>
-        <a href="#" class="card-link">Another link</a>
-      </div>
-    </div>
   </div>
 </div>
