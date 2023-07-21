@@ -24,7 +24,8 @@
         <p class="card-text mb-0">{{product.name}}</p>
         <a href="#" class="card-link fw-bold"
             (mouseenter)="product.isMouseOver = true"
-            (mouseleave)="product.isMouseOver = false">
+            (mouseleave)="product.isMouseOver = false"
+            (click)="addToCart(product)">
             {{ product.isMouseOver ? 'Adicionar ao Carrinho' : product.price }}
         </a>
       </div>

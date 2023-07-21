@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { CartService } from 'src/app/service/cart.service';
 import { ProductsService } from 'src/app/service/products.service';
 import { Product } from 'src/app/shared/interfaces/product';
 
@@ -13,7 +14,7 @@ export class GamesComponent {
 
   isMouseOver = false;
   
-  constructor(private productsService: ProductsService) {  }
+  constructor(private productsService: ProductsService, private cartService: CartService) {  }
 
   ngOnInit() {
     this.productsService.getProducts().subscribe(
@@ -25,5 +26,9 @@ export class GamesComponent {
 
       }
     )
-  }  
+  }
+
+  addToCart(product: Product) {
+    this.cartService.addToCart(product);
+  }
 }
