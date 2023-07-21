@@ -17,6 +17,12 @@ export class CartService {
     this.cartItemsSubject.next([...currentCartItems, product]);
   }
 
+  removeToCart(product: Product) {
+    const currentCartItems = this.cartItemsSubject.getValue();
+    const updatedCartItems = currentCartItems.filter(item => item !== product);
+    this.cartItemsSubject.next(updatedCartItems);
+  }
+
   getCartItems(): Product[] {
     return this.cartItemsSubject.getValue();
   }

@@ -4,19 +4,29 @@
       <div class="col-lg-12 d-flex align-items-center">
         <h3 class="card-title fw-bold">Carrinho</h3> <span>{{cartItems.length === 0 ? '' : "(" + cartItems.length + ")"}}</span>
       </div>
+
       <div class="col-lg-12 text-center py-5" *ngIf="cartItems.length === 0">
         <img src="../assets/cart-icon.svg" alt="">
         <p class="text-wrap w-50 mx-auto">Até o momento, o seu carrinho está vazio.</p>
       </div>
-      <div class="col-lg-12" *ngIf="cartItems.length > 0">
 
-        <div class="row mb-3" *ngFor="let item of cartItems">
+      <div class="col-lg-12" *ngIf="cartItems.length > 0">
+        <div class="row mb-3" *ngFor="let item of cartItems" (mouseenter)="item.isMouseOver = true" (mouseleave)="item.isMouseOver = false">
           <div class="col-3 card-header border">
             <img src="../assets/{{item.image}}" class="card-img-top" alt="...">
           </div>
+
           <div class="col-9">
-            <p class="mb-0">{{ item.name }}</p>
-            <span class="fw-bold">R$ {{ item.price }}</span>
+            <div class="row align-items-center">
+              <div class="col-9">
+                <p class="mb-0">{{ item.name }}</p>
+                <span class="fw-bold">R$ {{ item.price }}</span>
+              </div>
+
+              <div class="col-3">
+                <a href="#" class="card-link fw-bold text-decoration-none text-white px-1 pb-1 rounded" (click)="removeToCart(item)">{{ item.isMouseOver ? 'x' :''}}</a>
+              </div>
+            </div>
           </div>
         </div>
       </div>

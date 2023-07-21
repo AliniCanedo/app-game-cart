@@ -6,12 +6,14 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { GamesComponent } from './components/store/games/games.component';
 import { CartComponent } from './components/store/cart/cart.component';
+import { TotalComponent } from './components/store/cart/total/total.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     GamesComponent,
-    CartComponent
+    CartComponent,
+    TotalComponent
   ],
   imports: [
     BrowserModule,

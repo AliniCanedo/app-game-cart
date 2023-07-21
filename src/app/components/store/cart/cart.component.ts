@@ -10,11 +10,17 @@ import { Product } from 'src/app/shared/interfaces/product';
 export class CartComponent {
   cartItems: Product[] = [];
 
+  isMouseOver = false;
+
   constructor(private cartService: CartService) { }
 
   ngOnInit() {
     this.cartService.cartItems$.subscribe((items) => {
       this.cartItems = items;
     });
+  }
+
+  removeToCart(product: Product) {
+    this.cartService.removeToCart(product);
   }
 }
